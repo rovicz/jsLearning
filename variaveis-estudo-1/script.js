@@ -71,13 +71,29 @@ console.log(`A garota ${individuo} leva cerca de ${[bananaTotal / bananaDiarias]
 
 // Teste 5 - Boolean (if, else / true, false)
 
-var covid = true;
+var covid = false; //True = Positivado.
+var nãoSucedido = false; //True = Não Sucedido.
+
+// Ambas False = Negativado (A Primeira ja define e não conta a segunda.).
+// Covid false e nãoSucedido true = else if entra em ação e informa o texto.
 
 if (covid) {
   console.log('Positivo, se encontra contaminado pela covid-19.');
-  var positivo = 'Encaminhe-se para o ponto de ajuda mais próximo.';
-} else {
+} 
+  else if(nãoSucedido) {
+  console.log('Teste não sucedido, favor realizar novamente.');
+}
+  else {
   console.log('Negativo, não se encontra contaminado pela covid-19.');
-  var negativo = 'Continue no combate ao covid-19 e se proteja.';
 }
 
+var marca = 'Adidas'; // Caso a String esteja vazia, o mesmo valida o else e informa o texto do mesmo.
+
+if (marca) {
+  console.log(marca);
+} else {
+  console.log('Marca não Listada.');
+}
+
+// !! verifica se uma expressão é Truthy ou Falsy. (!= ou !== verifica se uma string é diferente ou não).
+// == verifica se uma expressão é Truthy ou Falsy (=== funciona como uma comparação máxima e restrita).
