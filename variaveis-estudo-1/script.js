@@ -97,3 +97,26 @@ if (marca) {
 
 // !! verifica se uma expressão é Truthy ou Falsy. (!= ou !== verifica se uma string é diferente ou não).
 // == verifica se uma expressão é Truthy ou Falsy (=== funciona como uma comparação máxima e restrita).
+
+// Teste 6 - Switch's 
+
+var monsterFavorito = 'Manga';
+
+switch (monsterFavorito) {
+  case 'Padrão':
+    console.log ('O meu favorito é o Padrão.');
+  break;
+
+  case ('Limão'):
+    console.log('o meu favorito é o de Limão');
+  break;
+
+  case ('Laranja'):
+    console.log ('O meu favorito é o de Laranja.');
+  break;
+
+  default:
+    console.log('Nenhum dos citados é o meu Monster preferido.')
+}
+
+// O switch verifica um valor diante diversos valores diferentes.
