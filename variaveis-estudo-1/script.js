@@ -98,7 +98,7 @@ if (marca) {
 // !! verifica se uma expressão é Truthy ou Falsy. (!= ou !== verifica se uma string é diferente ou não).
 // == verifica se uma expressão é Truthy ou Falsy (=== funciona como uma comparação máxima e restrita).
 
-// Teste 6 - Switch's 
+// Teste 6 - Switch's (O switch verifica um valor diante diversos valores diferentes).
 
 var monsterFavorito = 'Manga';
 
@@ -116,7 +116,24 @@ switch (monsterFavorito) {
   break;
 
   default:
-    console.log('Nenhum dos citados é o meu Monster preferido.')
+    console.log('Nenhum dos citados é o meu Monster preferido.');
 }
 
-// O switch verifica um valor diante diversos valores diferentes.
+// Teste 7 - Funções
+
+function belleBocas(horas, pessoas) {
+  const belleBeijos = (horas * 60) / pessoas;
+  console.log (belleBeijos);
+}
+
+belleBocas(6, 72) // 5 ( 1 a cada 5 min);
+
+var beijosPorMin = ((6 * 60) / 72) // 5
+
+function belleTempoBeijo(beijosPorMin, beijosProcurando) {
+  const beijosMedia = beijosPorMin - beijosProcurando;
+  console.log (beijosMedia);
+}
+
+beijosPorMin(5, 3) // Se ela gastar 3min procurando alguém para beijar, ela tem cerca de 2min de média por beijo; 
+
