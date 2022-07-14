@@ -122,18 +122,32 @@ switch (monsterFavorito) {
 // Teste 7 - Funções
 
 function belleBocas(horas, pessoas) {
+
   const belleBeijos = (horas * 60) / pessoas;
-  console.log (belleBeijos);
+  console.log (`Belle Beijou cerca de 1 pessoa(s) a cada ${belleBeijos} minuto(s).`);
 }
 
 belleBocas(6, 72) // 5 ( 1 a cada 5 min);
 
-var beijosPorMin = ((6 * 60) / 72) // 5
+function belleTempoBeijo(horas, pessoas, beijosProcurando) {
 
-function belleTempoBeijo(beijosPorMin, beijosProcurando) {
-  const beijosMedia = beijosPorMin - beijosProcurando;
-  console.log (beijosMedia);
+  const beijosMedia = [(horas * 60) / pessoas] - beijosProcurando;
+  console.log (`Belle teve uma média de ${beijosMedia}min por beijo, sendo ${beijosProcurando}min de procura por um pretendente.`);
 }
 
-beijosPorMin(5, 3) // Se ela gastar 3min procurando alguém para beijar, ela tem cerca de 2min de média por beijo; 
+belleTempoBeijo(6, 72, 3) // Se ela gastar 3min procurando alguém para beijar, ela tem cerca de 2min de média por beijo. 
 
+// Teste 7.1 - Typeof
+
+function nomeTypeof(nome) {
+
+  if (typeof nome !== 'string') {
+  return 'Insira um nome.'
+  } else if(nome === 'string') {
+  return `Seu nome é ${nome}`
+  } else {
+  return false;
+  }
+}
+
+console.log (nomeTypeof('Victor'))
