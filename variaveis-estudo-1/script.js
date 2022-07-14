@@ -139,15 +139,19 @@ belleTempoBeijo(6, 72, 3) // Se ela gastar 3min procurando alguém para beijar, 
 
 // Teste 7.1 - Typeof
 
-function nomeTypeof(nome) {
+function nomeDoAluno(nome) {
 
   if (typeof nome !== 'string') {
   return 'Insira um nome.'
-  } else if(nome === 'string') {
-  return `Seu nome é ${nome}`
+  } else if(nome) {
+  return `O nome do aluno é ${nome}.`
   } else {
   return false;
   }
+
 }
 
-console.log (nomeTypeof('Victor'))
+console.log (nomeDoAluno('Victor'))
+
+
+// Teste 8 - Objetos
