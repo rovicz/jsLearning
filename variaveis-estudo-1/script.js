@@ -74,7 +74,7 @@ console.log(`A garota ${individuo} leva cerca de ${[bananaTotal / bananaDiarias]
 var covid = false; //True = Positivado.
 var nãoSucedido = false; //True = Não Sucedido.
 
-// Ambas False = Negativado (A Primeira ja define e não conta a segunda.).
+// Ambas False/True = Negativado/Positivado (A Primeira ja define e não conta a segunda).
 // Covid false e nãoSucedido true = else if entra em ação e informa o texto.
 
 if (covid) {
@@ -143,15 +143,43 @@ function nomeDoAluno(nome) {
 
   if (typeof nome !== 'string') {
   return 'Insira um nome.'
-  } else if(nome) {
+    } else if(nome) {
   return `O nome do aluno é ${nome}.`
-  } else {
+    } else {
   return false;
-  }
+    }
 
 }
 
 console.log (nomeDoAluno('Victor'))
-
+console.log (nomeDoAluno(3123123))
 
 // Teste 8 - Objetos
+
+var aluno = {
+  nome: 'Victor',
+  idade: 17,
+  cidade: 'Goiânia',
+  estudante: true,
+}
+
+aluno.nome // Victor
+aluno.idade // 17
+
+var triangulo = {
+  base: {},
+  altura: {},
+    area: function(base, altura) {
+    return (base * altura) / 2;
+    },
+
+  ladoA: {},
+  ladoB: {},
+  ladoC: {},
+  perimetro: function(ladoA,ladoB,ladoC) {
+    return ladoA + ladoB + ladoC;
+  },
+}
+
+triangulo.area (10, 5) // 25
+triangulo.perimetro (10, 5, 5); // 20
