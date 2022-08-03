@@ -183,3 +183,29 @@ var triangulo = {
 
 triangulo.area (10, 5) // 25
 triangulo.perimetro (10, 5, 5); // 20
+
+
+// Atividade 04 - Arrays
+
+
+// Criar uma Array com as  conquistas do Brasil nas Copas do Mundo de Futebol.
+var brasilCopas = [1959, 1962, 1970, 1994, 2002];
+
+// Crie um Loop para mostrar os anos em que o Brasil foi Campeão da Copa do Mundo de Futebol.
+for (var i = 0; i < brasilCopas.length; i++) {
+  console.log('O Brasil ganhou a copa de ' + brasilCopas[i] + '.');
+}
+
+//Interaja com as Frutas e pare até chegar em Pera.
+var frutas = ['Banana', 'Melancia', 'Maça', 'Pera', 'Uva']
+
+for (var fruta = 0; fruta < frutas.length; fruta++) {
+  console.log(frutas[fruta]);
+  if(frutas[fruta] === 'Pera') {
+    break
+  }
+}
+
+// Coloque a última fruta da array acima de uma variável, sem remover o mesmo do array.
+
+var ultimaFruta = frutas[frutas.length - 1];
