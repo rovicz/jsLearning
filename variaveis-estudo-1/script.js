@@ -209,3 +209,37 @@ for (var fruta = 0; fruta < frutas.length; fruta++) {
 // Coloque a última fruta da array acima de uma variável, sem remover o mesmo do array.
 
 var ultimaFruta = frutas[frutas.length - 1];
+
+// Atividade 05 - Atribuição e Ternário
+
+// Some 500 ao valor do scroll abaixo, atribuindo um novo valor ao scroll.
+
+var scroll = 1000;
+scroll += 500;
+console.log(scroll);
+
+// Atribua true para a variável "darCredito", caso o cliente possua carro e casa e false caso o contrário.
+
+var possuiCarro = true;
+var possuiCasa = true;
+
+var darCredito;
+darCredito = (possuiCarro && possuiCasa) ? 'Autorizado a liberação do Crédito.' : 'Não autorizado a liberação do Crédito.'
+console.log(darCredito);
+
+// Atividade 06 - Escopo
+
+// Formula para calcular + 5 e * 5.
+
+const cinco = 5;
+
+function somarCinco(x) {
+  return x + cinco;
+}
+
+function multiCinco(x) {
+  return x * 5;
+}
+
+console.log('O resultado da soma é ' + somarCinco(5))
+console.log('O resultado da multiplicação é ' + multiCinco(5))
