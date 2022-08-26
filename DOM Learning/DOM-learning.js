@@ -45,3 +45,17 @@ console.log(`O link interno é o ${linkInterno}.`)
 const ultimoP = document.querySelectorAll('p')
 console.log(ultimoP[--ultimoP.length]);
 
+// Atividade 03
+
+// Mostre no console cada parágrafo do site.
+const paragrafosAll = document.querySelectorAll('p')
+
+paragrafosAll.forEach((item) =>  {
+  console.log(item);
+});
+
+// Mostre o texto dos parágrafos no console.
+paragrafosAll.forEach((item) =>  {
+  console.log(item.innerText);
+});
+
