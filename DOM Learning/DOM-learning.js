@@ -59,3 +59,7 @@ paragrafosAll.forEach((item) =>  {
   console.log(item.innerText);
 });
 
+const testediv = document.querySelector('.testdiv');
+const h3TestDiv = testediv.querySelector('.h3-testdiv').innerHTML;
+
+console.log(h3TestDiv);
