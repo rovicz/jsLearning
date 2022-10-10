@@ -61,3 +61,18 @@ const Victor = new Paciente('Victor', 70, 1.80); // O paciente Victor esta no pe
 const Jean = new Paciente('Jean', 87, 1.60); // O paciente Jean esta com obesidade I.
 const Drikas = new Paciente('drk', 55, 1.70); // O paciente drk esta no peso ideal.
 const Leo = new Paciente('Leo', 68, 1.74); // O paciente Leo esta no peso ideal.
+
+// Number e Math
+
+const valorQuebrado = 1811.25;
+console.log(valorQuebrado.toFixed()) // Arredonda o valor para o ponto mais proximo, seja pra cima ou pra baixo (49 <= : baixo, 50 >= : cima).
+
+const valorCorrigido = 1811; // toFixed e toString nao funcionam junto com o toLocateString.
+console.log(valorCorrigido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}))
+
+console.log(`o valor do produto e de ${valorCorrigido.toString()} reais.`) // Transforma o number em String.
+
+const numbersLista = Math.max(5, 15, 20, 40, 60, 320, 3, 90); // Numero mais alto da lista.
+const numbersLista2 = Math.min(5, 15, 20, 40, 60, 320, 3, 90); // Numero mais baixo da lista.
+console.log(numbersLista); // 320
+console.log(numbersLista2); // 3
