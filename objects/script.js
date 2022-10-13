@@ -70,9 +70,25 @@ console.log(valorQuebrado.toFixed()) // Arredonda o valor para o ponto mais prox
 const valorCorrigido = 1811; // toFixed e toString nao funcionam junto com o toLocateString.
 console.log(valorCorrigido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}))
 
-console.log(`o valor do produto e de ${valorCorrigido.toString()} reais.`) // Transforma o number em String.
+console.log(`o valor do produto e de ${valorCorrigido.toString()} reais.`); // Transforma o number em String.
 
 const numbersLista = Math.max(5, 15, 20, 40, 60, 320, 3, 90); // Numero mais alto da lista.
 const numbersLista2 = Math.min(5, 15, 20, 40, 60, 320, 3, 90); // Numero mais baixo da lista.
 console.log(numbersLista); // 320
 console.log(numbersLista2); // 3
+
+// Array's
+
+const sneakers1 = ['Yeezy 350 v2', 'Yeezy 700 v3'];
+const sneakers2 = ['Yeezy Slide', 'Yeezy 380'];
+const sneakersAll = sneakers1.concat(sneakers2); // Concat tem a function de concatenar duas (ou mais), arrrays.
+
+console.log(sneakersAll) // Retorna as duas arrays em uma so.
+
+// More tests
+
+const sneakersEstoque = sneakersAll.concat('Nike Dunk Low', 'Nike Blazer Mid', 'Nike Air Jordan IV');
+sneakersEstoque.includes('Yeezy Slide'); // True
+sneakersEstoque.includes('Nike Air Jordan I'); // False
+
+sneakersEstoque.slice(3); // Retorna a Array do terceiro item para frente, no caso: ['Yeezy 380, 'Yeezy 380', 'Nike Dunk Low', 'Nike Blazer Mid', 'Nike Air Jordan IV'].
