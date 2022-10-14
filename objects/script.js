@@ -92,3 +92,67 @@ sneakersEstoque.includes('Yeezy Slide'); // True
 sneakersEstoque.includes('Nike Air Jordan I'); // False
 
 sneakersEstoque.slice(3); // Retorna a Array do terceiro item para frente, no caso: ['Yeezy 380, 'Yeezy 380', 'Nike Dunk Low', 'Nike Blazer Mid', 'Nike Air Jordan IV'].
+
+// forEach
+
+const carros = ['Honda', 'Hyundai', 'Fiat'];
+
+carros.forEach((item, index, array) => {
+  console.log(item.toUpperCase(), index, array);
+
+});
+
+// Map
+
+const comidas = ['Strognoff', 'Frango Assado', 'Torta de Frango']
+
+const comidasArray = comidas.map((item) => {
+  return item.toUpperCase()
+
+});
+
+console.log(comidasArray[2] = 'Lasanha de Frango'.toUpperCase()); // Retornei os item's em upperCase e alterei o segundo item da array outro nome, alterando o objeto dentro da array.
+
+// Ou seja, caso queira uma Array nova a partir de outra Array, deve-se usar o Map, caso nao, apenas utilise o forEach.
+
+// Reduce
+
+const aulas = [
+{
+  nome: 'HTML 1',
+  min: 15
+},
+{
+  nome: 'CSS 1',
+  min: 20
+},
+{
+  nome: 'JS 1',
+  min: 25
+},
+{
+  nome: 'PHP 1',
+  min: 30
+},
+]
+
+const listaAulas = aulas.reduce((acumulador, atual, index) => {
+  acumulador[index] = atual.nome;
+  return acumulador;
+}, {});
+
+// Some
+
+const frutas = ['Manga', 'Ameixa', 'Uva'];
+
+const temUva = frutas.some((item) => {
+  return item === 'Ameixa';
+}); // Retorna True, ja que o item possui o objeto 'Ameixa'.
+
+// Every
+
+const bebidas = ['Cerveja', 'Energetico', 'Refrigerante'];
+
+const everyBebidas = bebidas.every((bebidas) => {
+  return bebidas;
+}) // Retorna True ou False caso um item da array seja uma string vazia ou nao, ja que uma string vazia caracteriza o valor boleano de falso, sendo assim, o every e o contrario do Some.
