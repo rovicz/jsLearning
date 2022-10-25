@@ -156,3 +156,17 @@ const bebidas = ['Cerveja', 'Energetico', 'Refrigerante'];
 const everyBebidas = bebidas.every((bebidas) => {
   return bebidas;
 }) // Retorna True ou False caso um item da array seja uma string vazia ou nao, ja que uma string vazia caracteriza o valor boleano de falso, sendo assim, o every e o contrario do Some.
+
+
+// Function
+
+const perimetro = new Function('lado', 'return lado * 4'); // Retorna uma Função normal, no caso calculando o perimetro de uma área.
+
+// Call
+
+const marcasDeCarros = ['Ford', 'Fiat', 'Uno']
+const marcasDeCarros2 = ['Honda', 'Hyundai']
+
+marcasDeCarros.forEach.call(marcasDeCarros2, (item) => {
+  console.log(item) // Altera e considera tudo aquilo que vem após o call, sendo assim, o marcasDeCarros foi alterado para marcasDeCarros2.
+})
