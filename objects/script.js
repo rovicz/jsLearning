@@ -170,3 +170,13 @@ const marcasDeCarros2 = ['Honda', 'Hyundai']
 marcasDeCarros.forEach.call(marcasDeCarros2, (item) => {
   console.log(item) // Altera e considera tudo aquilo que vem após o call, sendo assim, o marcasDeCarros foi alterado para marcasDeCarros2.
 })
+
+// Bind
+
+function sneakersPrice(price, productionCust) {
+  return `O valor do tênis é ${price + productionCust} reais.`;
+}
+
+const sneakersFinalPrice = sneakersPrice.bind(null, 120);
+
+console.log(sneakersFinalPrice(80)); // Padroniza o valor do custo de produção dos tënis em 120 e apenas considera o segundo valor, fazendo assim a operação.
