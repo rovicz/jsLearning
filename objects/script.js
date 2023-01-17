@@ -180,3 +180,120 @@ function sneakersPrice(price, productionCust) {
 const sneakersFinalPrice = sneakersPrice.bind(null, 120);
 
 console.log(sneakersFinalPrice(80)); // Padroniza o valor do custo de produção dos tënis em 120 e apenas considera o segundo valor, fazendo assim a operação.
+
+// Exercicios sobre Function.
+
+// Retorne a soma total de caracteres dos
+// parágrafos acima utilizando reduce
+const paragrafos = document.querySelectorAll('p');
+const caracteresTotais = Array.prototype.reduce.call(paragrafos, (acumulador, item) => {
+  return acumulador + item.innerText.length;
+}, 0);
+
+console.log(`Este texto possui um total de ${caracteresTotais} caracteres.`);
+
+// Crie uma função que retorne novos elementos
+// html, com os seguintes parâmetros
+// tag, classe e conteudo.
+function criarElemento(tag, classe, conteudo) {
+  const elemento = document.createElement(tag);
+    classe ? elemento.classList.add(classe) : null;
+    conteudo ? elemento.innerHTML = conteudo : null;
+    return elemento;
+};
+
+console.log(criarElemento('p', 'ativo', 'Esse é o conteúdo.'))
+
+
+// Crie uma nova função utilizando a anterior como base
+// essa nova função deverá sempre criar h1 com a
+// classe titulo. Porém o parâmetro conteudo continuará dinâmico
+const h1Titulo = criarElemento.bind(null, 'h1', 'titulo');
+
+const swimmingAlbum = h1Titulo('Swimming by Mac Miller.');
+const circlesAlbum = h1Titulo('Circles by Mac Miller.');
+
+console.log(swimmingAlbum, circlesAlbum);
+
+// Objetos
+
+const albuns = {
+  init(valor) {
+    this.album = valor;
+    return this;
+  },
+
+  lancar() {
+    return this.album + ' lançou.'
+  }
+}
+
+const swimming = Object.create(albuns).init('Swimming');
+console.log(swimming.lancar());
+const circles = Object.create(albuns).init('Circles');
+console.log(circles.lancar());
+
+// Assign
+
+const funcaoAlbum = {
+  lancou() {
+    return ' lançou';
+  },
+  aindaNaoLancou() {
+    return ' ainda não lançou';
+  },
+}
+
+const album1 = {
+  nome: swimming,
+  data: 2018
+}
+
+const album2 = {
+  nome: circles,
+  data: 2020
+}
+
+Object.assign(album1, funcaoAlbum);
+Object.assign(album2, funcaoAlbum);
+
+
+// defineProperties & defineProperty.
+
+const moto = {}
+Object.defineProperties(moto, {
+  rodas: {
+    value: 2,
+    configurable: false, // impede deletar e mudança de valor
+    enumarable: true, // torna enumerável
+  },
+  capacete: {
+    value: true,
+    configurable: true,
+    writable: false, // impede mudança de valor
+  },
+})
+
+moto.rodas = 4;
+delete moto.capacete;
+moto;
+// {rodas: 2}
+
+// Get e Set
+
+const moto = {}
+Object.defineProperties(moto, {
+  velocidade: {
+    get() {
+      return this._velocidade;
+    },
+    set(valor) {
+      this._velocidade = 'Velocidade ' + valor;
+    }
+  },
+})
+
+moto.velocidade = 200;
+moto.velocidade;
+// Velocidade 200
+
