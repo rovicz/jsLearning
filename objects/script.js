@@ -347,3 +347,81 @@ frutasC.constructor; // Array
 const frase = 'Isso é uma String';
 frase.constructor; // String
 
+// HasOwnProperty e propertyIsEnumerable
+
+const frutasHOP = ['Banana', 'Uva'];
+
+frutasHOP.hasOwnProperty('map'); // false
+Array.hasOwnProperty('map'); // false
+Array.prototype.hasOwnProperty('map'); // true
+
+Array.prototype.propertyIsEnumerable('map'); // false 
+window.propertyIsEnumerable('innerHeight'); // true
+// propertyIsEnumerable verifica se a propriedade é enumerável.
+
+// isPrototypeOf
+
+const frutasIPO = ['Banana', 'Uva'];
+
+Array.prototype.isPrototypeOf(frutasIPO); // true
+// Verifica se é o protótipo do valor passado.
+
+// toString
+
+const frutasTS = ['Banana', 'Uva'];
+frutasTS.toString(); // 'Banana,Uva'
+typeof frutas; // object
+Object.prototype.toString.call(frutas); // [object Array]
+
+const fraseTS = 'Uma String';
+fraseTS.toString(); // 'Uma String'
+typeof frase; // string
+Object.prototype.toString.call(frase); // [object String]
+
+const carroTS = {marca: 'Ford'};
+carroTS.toString(); // [object Object]
+typeof carro; // object
+Object.prototype.toString.call(carro); // [object Object]
+
+const li = document.querySelectorAll('li');
+typeof li; // object
+Object.prototype.toString.call(li); // [object NodeList]
+
+// Exercicios 
+
+// Crie uma função que verifique
+// corretamente o tipo de dado
+function verificarDado(dado) {
+  return Object.prototype.toString.call(dado);
+}
+
+console.log(verificarDado('String'))
+
+// Crie um objeto quadrado com
+// a propriedade lados e torne
+// ela imutável
+const quadrado = {};
+Object.defineProperties(quadrado, {
+  lados: {
+    value: 4,
+    enumerable: true
+  }
+})
+
+console.log(quadrado)
+
+// Previna qualquer mudança
+// no objeto abaixo
+const configuracao = {
+  width: 800,
+  height: 600,
+  background: '#333'
+}
+
+Object.freeze(configuracao);
+
+// Liste o nome de todas
+// as propriedades do
+// protótipo de String e Array
+console.log(Object.getOwnPropertyNames(String.prototype));
+console.log(Object.getOwnPropertyNames(Array.prototype));
