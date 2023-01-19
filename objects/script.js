@@ -297,3 +297,52 @@ moto.velocidade = 200;
 moto.velocidade;
 // Velocidade 200
 
+// Object.Keys/Value/Entires
+
+Object.keys(Array);
+// [] vazia, pois não possui propriedades enumeráveis
+
+const carroObjKVE = {
+  marca: 'Ford',
+  ano: 2018,
+}
+Object.keys(carroObjKVE);
+// ['marca', 'ano']
+Object.values(carroObjKVE);
+// ['Ford', 2018]
+Object.entries(carroObjKVE);
+// [['marca', 'Ford'], ['ano', 2018]]
+
+// GetPropertyOf e Is
+
+const frutasGPO = ['Banana', 'Pêra']
+Object.getPrototypeOf(frutasGPO);
+Object.getPrototypeOf(''); // String
+
+const frutas1 = ['Banana', 'Pêra'];
+const frutas2 = ['Banana', 'Pêra'];
+
+Object.is(frutas1, frutas2); // false
+
+
+// Object.Freeze/Seal/preventExtensions
+
+const carroFSP = {
+  marca: 'Ford',
+  ano: 2018,
+}
+Object.freeze(carroFSP); // impede qualquer mudança nas propriedades.
+Object.seal(carroFSP); // previne a adição de novas propriedades e impede que as atuais sejam deletadas.
+Object.preventExtensions(carroFSP); // previne a adição de novas propriedades.
+
+Object.isFrozen(carroFSP); // true
+Object.isSealed(carroFSP); // true
+Object.isExtensible(carroFSP); // true
+
+// Constructor 
+
+const frutas = ['Banana', 'Uva'];
+frutas.constructor; // Array
+
+const frase = 'Isso é uma String';
+frase.constructor; // String
