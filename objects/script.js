@@ -341,8 +341,9 @@ Object.isExtensible(carroFSP); // true
 
 // Constructor 
 
-const frutas = ['Banana', 'Uva'];
-frutas.constructor; // Array
+const frutasC = ['Banana', 'Uva'];
+frutasC.constructor; // Array
 
 const frase = 'Isso é uma String';
 frase.constructor; // String
+
