@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  background-color: #ccc;
+  background: #ccc;
 }
 
 label {
@@ -20,14 +20,13 @@ input {
   grid-template-columns: 200px 1fr;
 }
 
-
 #controles {
   font-family: monospace;
   font-size: .875rem;
   background: #eee;
   padding: 1rem;
   border-radius: 4px;
-  box-shadow: 2px 2px 2px 0 rgba(0,0,0.1);
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,.1);
 }
 
 .css {
@@ -39,6 +38,5 @@ input {
 }
 
 .css span {
-  display: block;
   margin-bottom: .5rem;
 }
