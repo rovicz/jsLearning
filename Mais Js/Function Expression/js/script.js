@@ -1,7 +1,6 @@
 somar(4,2); // Retorna a soma, já que é uma função executada direto na memória.
  /* multiplicar(4,2); // Erro, pois a constante não se encontra na memória, logo a função ainda não existe, teria que haver a execução após a const. */
 
-
 function somar(a, b) {
   return a + b;
 }
