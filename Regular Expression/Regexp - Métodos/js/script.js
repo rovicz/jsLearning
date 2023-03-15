@@ -68,4 +68,70 @@ while((regexpResult = regexp6.exec(frase4)) !== null) {
   console.log(regexpResult[0]); // Para no momento que acha o null.
 }
 
+// String.Match() 
 
+const regexp7 = /\w{2,}/g;
+const regexpSemG = /\w{2,}/;
+const frase5 = 'JavaScript, TypeScript e CoffeeScript';
+
+//O match() é um método de strings que pode receber como argumento uma Regexp.
+frase5.match(regexp7); // ['JavaScript', 'TypeScript', 'CoffeeScript']
+
+frase5.match(regexpSemG); // ["JavaScript", index: 0, input: "JavaScript, TypeScript e CoffeeScript", groups: undefined]
+
+// String.Split()
+
+const frase6 = 'JavaScript, TypeScript, CoffeeScript';
+
+frase6.split(', '); // ["JavaScript", "TypeScript", "CoffeeScript"]
+frase6.split(/Script/g); // ["Java", ", Type", ", Coffee", ""]
+
+const tags = `
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+`;
+
+// O split serve para distribuirmos uma string em uma array, quebrando a string no argumento que for passado.
+tags.split(/(?<=<\/?)\w+/g).join('div');
+// <div>
+//   <div>Item 1</div>
+//   <div>Item 2</div>
+// <div>
+
+// String.Replace()
+
+const tags2 = `
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+`;
+
+// O método replace() é o mais interessante por permitir a utilização de funções de callback para cada match que ele der com a Regexp.
+tags2.replace(/(?<=<\/?)\w+/g, 'div');
+// <div>
+//   <div>Item 1</div>
+//   <div>Item 2</div>
+// <div>
+
+// Callback
+
+const regexp9 = /(\w+)(@[\w]+)/g;
+const emails = `joao@homail.com.br
+marta@ggmail.com.br
+bruna@oulook.com.br`
+
+emails.replace(regexp9, function(...args) {
+  console.log(args);
+  if(args[2] === '@homail') {
+    return `${args[1]}@hotmail`;
+  } else if(args[2] === '@ggmail') {
+    return `${args[1]}@gmail`;
+  } else if(args[2] === '@oulook') {
+    return `${args[1]}@outlook`;
+  } else {
+    return 'x';
+  }
+}); // joao@hotmail.com.br / marta@gmail.com.br / bruna@outlook.com.br
